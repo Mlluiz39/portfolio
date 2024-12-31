@@ -8,6 +8,12 @@ import {
 } from 'lucide-react'
 import { ServiceCard } from './components/ServiceCard'
 import { ProjectCard } from './components/ProjectCard'
+import profilePicture from './assets/perfil.jpg'
+import iterative from './assets/pexels-questions.jpg'
+import cnpjConsultation from './assets/consult-cnpj.jpg'
+import passwordGenerator from './assets/password.jpg'
+import todoApp from './assets/todo-app.jpg'
+import beautyWebsite from './assets/aesthetics.jpg'
 
 function App() {
   return (
@@ -18,7 +24,7 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-1/2 bg-amber-500 hidden lg:block">
             <img
-              src="../src/assets/perfil.jpg"
+              src={profilePicture}
               alt="Marcelo Luiz"
               className="w-full h-full object-cover"
             />
@@ -217,7 +223,7 @@ function App() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <ProjectCard
-                image="../src/assets/pexels-questions.jpg"
+                image={iterative}
                 title="Quiz interativo"
                 description="Um quiz interativo com perguntas e respostas, para quem quer testar seus conhecimentos sobre o covid-19."
                 tags={['HTML5', 'CSS3', 'JavaScript']}
@@ -225,7 +231,7 @@ function App() {
                 demoLink="https://quiz-v2.vercel.app/"
               />
               <ProjectCard
-                image="../src/assets/consult-cnpj.jpg"
+                image={ cnpjConsultation}
                 title="Consultor de CNPJ"
                 description="Uma solução completa para consultar informações de CNPJ, como razão social, endereço, telefone e situação cadastral, sociedade tudo sem sair de casa e sem custo."
                 tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
@@ -233,7 +239,7 @@ function App() {
                 demoLink="https://cnpj-website-test.netlify.app/"
               />
               <ProjectCard
-                image="../src/assets/password.jpg"
+                image={passwordGenerator}
                 title="Gerador de Senhas"
                 description="Gerador de senhas aleatórias com opções personalizadas, como comprimento, letras maiúsculas, números e símbolos especiais para maior segurança."
                 tags={['React', 'Tailwind CSS']}
@@ -241,7 +247,7 @@ function App() {
                 demoLink="https://password-generate2.netlify.app/"
               />
               <ProjectCard
-                image="../src/assets/todo-app.jpg"
+                image={todoApp}
                 title="App de Gestão de Tarefas"
                 description="Um aplicativo de gestão de tarefas, onde voce pode ter uma visão geral de suas tarefas e também pode filtrar por data de cadastro, data de conclusão e status"
                 tags={['React', 'MongoDB', 'Node.js']}
@@ -249,7 +255,7 @@ function App() {
                 demoLink="https://todo-mlluiz.netlify.app/"
               />
               <ProjectCard
-                image="../src/assets/aesthetics.jpg"
+                image={beautyWebsite}
                 title="Site institucional clínica de estética"
                 description="Site institucional de uma clínica de estética, com informações sobre os serviços oferecidos, equipe, depoimentos e contato."
                 tags={['React', 'Tailwind CSS', 'Node.js']}
