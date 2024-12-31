@@ -5,6 +5,8 @@ interface ProjectCardProps {
   title: string
   description: string
   tags: string[]
+  githubLink: string
+  demoLink: string
 }
 
 export function ProjectCard({
@@ -12,6 +14,8 @@ export function ProjectCard({
   title,
   description,
   tags,
+  githubLink,
+  demoLink,
 }: ProjectCardProps) {
   return (
     <div className="bg-gray-900 rounded-xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300">
@@ -38,14 +42,18 @@ export function ProjectCard({
         </div>
         <div className="flex gap-4">
           <a
-            href="#"
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
           >
             <Github size={16} />
             <span className="text-sm">Código</span>
           </a>
           <a
-            href="#"
+            href={demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white/60 hover:text-white transition-colors flex items-center gap-2"
           >
             <Globe size={16} />
