@@ -14,6 +14,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -24,7 +25,7 @@
     "jsx": "react-jsx",
 
     /* Source maps */
-    "inlineSourceMap": true
+    "sourceMap": true
   },
   "include": ["src"]
 }
