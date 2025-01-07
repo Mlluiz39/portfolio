@@ -102,8 +102,8 @@ function App() {
                   Sobre Mim
                 </h2>
                 <p className="text-gray-300 mb-6">
-                  Sou um desenvolvedor full-stack apaixonado com mais de 4 anos
-                  de experiência na construção de aplicações web escaláveis e
+                  Sou um desenvolvedor full-stack apaixonado por tecnologia, com mais de 4 anos
+                  de experiência na construção de aplicações front-end, mobile e back-end escaláveis e
                   resolução de problemas complexos.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
