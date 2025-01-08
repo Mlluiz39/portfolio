@@ -16,6 +16,7 @@ import cnpjConsultation from './assets/consult-cnpj.jpg'
 import passwordGenerator from './assets/password.jpg'
 import todoApp from './assets/todo-app.jpg'
 import beautyWebsite from './assets/aesthetics.jpg'
+import travelWebsite from './assets/travels.jpg'
 
 function App() {
   return (
@@ -264,7 +265,7 @@ function App() {
                 image={todoApp}
                 title="App de Gestão de Tarefas"
                 description="Um aplicativo de gestão de tarefas, onde voce pode ter uma visão geral de suas tarefas e também pode filtrar por data de cadastro, data de conclusão e status"
-                tags={['React', 'MongoDB', 'Node.js']}
+                tags={['React', 'Tailwind', 'Fastify', 'Postgres', 'Prisma']}
                 githubLink="https://github.com/Mlluiz39/frontend-todoapp"
                 demoLink="https://todo-mlluiz.netlify.app/"
               />
@@ -275,6 +276,14 @@ function App() {
                 tags={['React', 'Tailwind CSS', 'Node.js']}
                 githubLink="https://github.com/Mlluiz39/paula-clinica"
                 demoLink="https://paula-esthetics.netlify.app/"
+              />
+              <ProjectCard
+                image={travelWebsite}
+                title="Site de viagens"
+                description="Site para sugestões de viagens com informações sobre destinos, pacotes, hospedagem e contato."
+                tags={['React', 'Tailwind CSS', 'consumo de API', 'Uso de IA']}
+                githubLink="https://github.com/Mlluiz39/travel-mlluiz2"
+                demoLink="https://travel-mlluiz2.vercel.app/"
               />
             </div>
           </div>
