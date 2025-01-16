@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Code2,
   Smartphone,
@@ -6,11 +7,11 @@ import {
   Download,
   Linkedin,
 } from 'lucide-react'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 import { ServiceCard } from './components/ServiceCard'
 import { ProjectCard } from './components/ProjectCard'
-import profilePicture from './assets/perfil.jpg'
+import profilePicture from './assets/perfil2.jpg'
 import iterative from './assets/pexels-questions.jpg'
 import cnpjConsultation from './assets/consult-cnpj.jpg'
 import passwordGenerator from './assets/password.jpg'
@@ -19,6 +20,12 @@ import beautyWebsite from './assets/aesthetics.jpg'
 import travelWebsite from './assets/travels.jpg'
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <>
       <div className="min-h-screen bg-gray-900" id="hero">
@@ -26,31 +33,66 @@ function App() {
         <div className="min-h-screen relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full">
-  {/* Foto do perfil para desktop */}
-  <img
-    src={profilePicture}
-    alt="Marcelo Luiz"
-    className="w-full h-full object-cover hidden lg:block" // Exibe apenas em telas grandes
-  />
-
-  {/* Animação Lottie para dispositivos móveis */}
-  <div className="flex justify-center items-center pt-64 h-full lg:hidden"> {/* Esconde em telas grandes */}
-    <DotLottieReact
-      src="https://lottie.host/81508527-fab9-4e06-b6c3-73c042520cd9/LFvos5bGZa.lottie"
-      loop
-      autoplay
-      style={{ width: '400px', height: '300px' }} 
-    />
-  </div>
-</div>
-
+            {/* Foto do perfil para desktop */}
+            <img
+              src={profilePicture}
+              alt="Marcelo Luiz"
+              className="w-full h-full object-cover hidden lg:block" // Exibe apenas em telas grandes
+            />
+            {/* Animação Lottie para dispositivos móveis */}
+            <div className="flex justify-center items-center pt-72 h-full lg:hidden">
+              <DotLottieReact
+                src="https://lottie.host/81508527-fab9-4e06-b6c3-73c042520cd9/LFvos5bGZa.lottie"
+                loop
+                autoplay
+                style={{ width: '400px', height: '300px' }}
+              />
+            </div>
+          </div>
 
           <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-20">
             <nav className="py-6 flex justify-between items-center">
-              <div className="text-amber-500 text-xl font-bold">
-                Dev: Marcelo
-              </div>
-              <button className="lg:hidden text-white hover:text-amber-500 transition-colors">
+              {/* Menu no Desktop */}
+              <ul className="hidden lg:flex space-x-6 text-white">
+                <li>
+                  <a
+                    href="#hero"
+                    className="hover:text-amber-500 cursor-pointer"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="hover:text-amber-500 cursor-pointer"
+                  >
+                    Serviços
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="hover:text-amber-500 cursor-pointer"
+                  >
+                    Projetos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="hover:text-amber-500 cursor-pointer"
+                  >
+                    Sobre Mim
+                  </a>
+                </li>
+              </ul>
+
+              {/* Botão do menu no Mobile */}
+              <button
+                onClick={toggleMenu}
+                className="lg:hidden text-white hover:text-amber-500 transition-colors"
+              >
                 <span className="sr-only">Menu</span>
                 <svg
                   className="w-6 h-6"
@@ -68,7 +110,34 @@ function App() {
               </button>
             </nav>
 
-            <div className="flex flex-col items-center text-center lg:text-left lg:items-start min-h-[80vh]">
+            {/* Menu Mobile - Exibe quando o menu está aberto */}
+            {isMenuOpen && (
+              <div className="lg:hidden text-white py-1 px-4">
+                <ul className="space-y-4">
+                  <li>
+                    <a href="#hero" className="block hover:text-amber-500">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services" className="block hover:text-amber-500">
+                      Serviços
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" className="block hover:text-amber-500">
+                      Projetos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" className="block hover:text-amber-500">
+                      Sobre Mim
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
+            <div className="lg:mt-40 mt-10">
               <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
                 Sou Marcelo Luiz
               </h1>
@@ -83,8 +152,8 @@ function App() {
               >
                 CONTRATE-ME
               </a>
-            </div> 
-          </div> 
+            </div>
+          </div>
         </div>
 
         {/* Seção Sobre */}
@@ -103,9 +172,10 @@ function App() {
                   Sobre Mim
                 </h2>
                 <p className="text-gray-300 mb-6">
-                  Sou um desenvolvedor full-stack apaixonado por tecnologia, com mais de 2 anos
-                  de experiência na construção de aplicações front-end, mobile e back-end escaláveis e
-                  resolução de problemas complexos.
+                  Sou um desenvolvedor full-stack apaixonado por tecnologia, com
+                  mais de 2 anos de experiência na construção de aplicações
+                  front-end, mobile e back-end escaláveis e resolução de
+                  problemas complexos.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -246,7 +316,7 @@ function App() {
                 demoLink="https://quiz-v2.vercel.app/"
               />
               <ProjectCard
-                image={ cnpjConsultation}
+                image={cnpjConsultation}
                 title="Consultor de CNPJ"
                 description="Uma solução completa para consultar informações de CNPJ, como razão social, endereço, telefone e situação cadastral, sociedade tudo sem sair de casa e sem custo."
                 tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
