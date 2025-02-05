@@ -26,7 +26,6 @@ function App() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-
   return (
     <>
       <div className="min-h-screen bg-gray-900" id="hero">
