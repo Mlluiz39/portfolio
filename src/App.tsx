@@ -393,7 +393,7 @@ function App() {
               title="App de Gestão de Tarefas"
               description="Um aplicativo de gestão de tarefas, onde voce pode ter uma visão geral de suas tarefas e também pode filtrar por data de cadastro, data de conclusão e status"
               tags={['React', 'Tailwind', 'Fastify', 'Postgres', 'Prisma']}
-              githubLink="https://github.com/Mlluiz39/frontend-todoapp"
+              githubLink="https://github.com/Mlluiz39/front-end-todo-app"
               demoLink="https://todo-mlluiz.netlify.app/"
             />
             <ProjectCard
