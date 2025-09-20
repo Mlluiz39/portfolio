@@ -13,12 +13,12 @@ import Lottie from 'lottie-react'
 import dev from './assets/dev.json'
 import { ServiceCard } from './components/ServiceCard'
 import { ProjectCard } from './components/ProjectCard'
-import iterative from './assets/pexels-questions.jpg'
-import cnpjConsultation from './assets/consult-cnpj.jpg'
-import passwordGenerator from './assets/password.jpg'
-import todoApp from './assets/todo-app.jpg'
-import beautyWebsite from './assets/aesthetics.jpg'
-import travelWebsite from './assets/travels.jpg'
+import SaintDeni from './assets/saintdeni.png'
+import CnpjConsultation from './assets/consult-cnpj.jpg'
+import PasswordGenerator from './assets/password.jpg'
+import LinkHub from './assets/linkHub.png'
+import BeautyWebsite from './assets/aesthetics.jpg'
+import TravelWebsite from './assets/travels.jpg'
 
 // Simple ModernAnimation component as a placeholder
 function ModernAnimation() {
@@ -365,15 +365,7 @@ function App() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
-              image={iterative}
-              title="Quiz interativo"
-              description="Um quiz interativo com perguntas e respostas, para quem quer testar seus conhecimentos sobre o covid-19."
-              tags={['HTML5', 'CSS3', 'JavaScript']}
-              githubLink="https://github.com/Mlluiz39/quiz_interactive"
-              demoLink="https://quiz-v2.vercel.app/"
-            />
-            <ProjectCard
-              image={cnpjConsultation}
+              image={CnpjConsultation}
               title="Consultor de CNPJ"
               description="Uma solução completa para consultar informações de CNPJ, como razão social, endereço, telefone e situação cadastral, sociedade tudo sem sair de casa e sem custo."
               tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
@@ -381,7 +373,7 @@ function App() {
               demoLink="https://cnpj-website-test.netlify.app/"
             />
             <ProjectCard
-              image={passwordGenerator}
+              image={PasswordGenerator}
               title="Gerador de Senhas"
               description="Gerador de senhas aleatórias com opções personalizadas, como comprimento, letras maiúsculas, números e símbolos especiais para maior segurança."
               tags={['React', 'Tailwind CSS']}
@@ -389,15 +381,15 @@ function App() {
               demoLink="https://password-generate2.netlify.app/"
             />
             <ProjectCard
-              image={todoApp}
-              title="App de Gestão de Tarefas"
-              description="Um aplicativo de gestão de tarefas, onde voce pode ter uma visão geral de suas tarefas e também pode filtrar por data de cadastro, data de conclusão e status"
-              tags={['React', 'Tailwind', 'Fastify', 'Postgres', 'Prisma']}
-              githubLink="https://github.com/Mlluiz39/front-end-todo-app"
-              demoLink="https://todo-mlluiz.netlify.app/"
+              image={LinkHub}
+              title="App de Gestão de Links"
+              description="Um aplicativo de gestão de links, onde você pode salvar, organizar e gerenciar seus links favoritos de forma fácil e rápida."
+              tags={['React', 'Tailwind', 'Nodejs', 'Postgres', 'VPS Oracle', 'Docker', 'Cloudflare']}
+              githubLink="https://github.com/Mlluiz39/linkhub-frontend"
+              demoLink="https://link-tree-hub.netlify.app/"
             />
             <ProjectCard
-              image={beautyWebsite}
+              image={BeautyWebsite}
               title="Site institucional clínica de estética"
               description="Site institucional de uma clínica de estética, com informações sobre os serviços oferecidos, equipe, depoimentos e contato."
               tags={['React', 'Tailwind CSS', 'Node.js']}
@@ -405,7 +397,15 @@ function App() {
               demoLink="https://paula-esthetics.netlify.app/"
             />
             <ProjectCard
-              image={travelWebsite}
+              image={SaintDeni}
+              title="Site institucional fábrica de pães e alimentos"
+              description="Site institucional de uma fabrica de pães e alimentos, com informações sobre os produtos oferecidos, equipe, depoimentos e contato."
+              tags={['React', 'Tailwind CSS', 'Claudflare']}
+              githubLink="Privado"
+              demoLink="https://saintdenialimentos.com.br/"
+            />
+            <ProjectCard
+              image={TravelWebsite}
               title="Site de viagens"
               description="Site para sugestões de viagens com informações sobre destinos, pacotes, hospedagem e contato."
               tags={['React', 'Tailwind CSS', 'consumo de API', 'Uso de IA']}
