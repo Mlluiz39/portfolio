@@ -393,7 +393,7 @@ function App() {
               title="Site institucional clínica de estética"
               description="Site institucional de uma clínica de estética, com informações sobre os serviços oferecidos, equipe, depoimentos e contato."
               tags={['React', 'Tailwind CSS', 'Node.js']}
-              githubLink="https://github.com/Mlluiz39/paula-clinica"
+              githubLink="https://github.com/Mlluiz39"
               demoLink="https://paula-esthetics.netlify.app/"
             />
             <ProjectCard
@@ -401,7 +401,7 @@ function App() {
               title="Site institucional fábrica de pães e alimentos"
               description="Site institucional de uma fabrica de pães e alimentos, com informações sobre os produtos oferecidos, equipe, depoimentos e contato."
               tags={['React', 'Tailwind CSS', 'Claudflare']}
-              githubLink="Privado"
+              githubLink="https://github.com/Mlluiz39"
               demoLink="https://saintdenialimentos.com.br/"
             />
             <ProjectCard
