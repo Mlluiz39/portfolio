@@ -386,7 +386,7 @@ function App() {
               description="Um aplicativo de gestão de links, onde você pode salvar, organizar e gerenciar seus links favoritos de forma fácil e rápida."
               tags={['React', 'Tailwind', 'Nodejs', 'Postgres', 'VPS Oracle', 'Docker', 'Cloudflare']}
               githubLink="https://github.com/Mlluiz39/linkhub-frontend"
-              demoLink="https://link-tree-hub.netlify.app/"
+              demoLink="https://link-tree-hub.netlify.app"
             />
             <ProjectCard
               image={BeautyWebsite}
