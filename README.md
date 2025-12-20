@@ -1,50 +1,103 @@
-# React + TypeScript + Vite
+# 💼 Portfólio – Marcelo Luiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao meu portfólio de projetos! 🚀  
+Aqui estão alguns dos meus principais trabalhos em desenvolvimento web e software, com foco em **tecnologias modernas**, **boas práticas** e **arquiteturas escaláveis**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Sobre mim
 
-## Expanding the ESLint configuration
+Sou **Marcelo Luiz**, desenvolvedor **Full Stack** e Engenheiro de Software, com experiência em:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Frontend: React, TypeScript, Tailwind CSS  
+- Backend: Node.js, Python, Go, NestJS  
+- Mensageria e integração: RabbitMQ, REST APIs  
+- Arquiteturas escaláveis e soluções distribuídas  
 
-- Configure the top-level `parserOptions` property like this:
+Este portfólio reúne projetos reais desenvolvidos para estudo, testes técnicos e aplicações práticas.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📌 Projetos em Destaque
+
+### 🌍 Climate Dashboard
+Dashboard moderno para visualização de dados climáticos em tempo real, com gráficos interativos e integração com uma arquitetura full stack.
+
+- Demo: https://climate-dashboard-demo.vercel.app/
+- Repositório: https://github.com/Mlluiz39/climate-dashboard-frontend
+
+---
+
+### 🔍 Consultor de CNPJ
+Aplicação frontend para consulta de informações de CNPJ, consumindo APIs públicas.
+
+- Demo: https://cnpj-website-test.netlify.app/
+- Repositório: https://github.com/Mlluiz39/Teste-Vaga-Desenvolvedor-Front-End
+
+---
+
+### 🔐 Gerador de Senhas
+Ferramenta para geração de senhas seguras com opções personalizadas.
+
+- Demo: https://password-generate2.netlify.app/
+- Repositório: https://github.com/Mlluiz39/password-generator
+
+---
+
+### 📎 LinkHub – Gestão de Links
+Aplicativo para gerenciamento de links favoritos, com backend próprio.
+
+- Demo: https://link-tree-hub.netlify.app
+- Repositório: https://github.com/Mlluiz39/linkhub-frontend
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- React + TypeScript  
+- Tailwind CSS  
+- Vite  
+- APIs REST  
+- Deploy com Vercel e Netlify  
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+public/
+├── index.html
+src/
+├── assets/
+├── components/
+├── sections/
+├── styles/
+└── main.tsx
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ▶️ Executando o Projeto Localmente
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+git clone https://github.com/Mlluiz39/portfolio.git
+cd portfolio
+npm install
+npm run dev
 ```
+
+Acesse em: http://localhost:5173
+
+---
+
+## 📬 Contato
+
+- Email: mlluizpereira39@gmail.com  
+- LinkedIn: https://www.linkedin.com/in/marcelo-luiz-pereira-souza/  
+- GitHub: https://github.com/Mlluiz39  
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
