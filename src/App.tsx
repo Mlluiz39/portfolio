@@ -13,12 +13,13 @@ import Lottie from 'lottie-react'
 import dev from './assets/dev.json'
 import { ServiceCard } from './components/ServiceCard'
 import { ProjectCard } from './components/ProjectCard'
-import SaintDeni from '../src/assets/saintDeni.png'
-import CnpjConsultation from './assets/consult-cnpj.jpg'
-import PasswordGenerator from './assets/password.jpg'
-import LinkHub from './assets/linkHub.png'
-import BeautyWebsite from './assets/aesthetics.jpg'
-import TravelWebsite from './assets/travels.jpg'
+import ClimatecSync from '../src/assets/climatecSync.webp'
+import SaintDeni from '../src/assets/saintDeni.webp'
+import CnpjConsultation from './assets/consult-cnpj.webp'
+import PasswordGenerator from './assets/password.webp'
+import LinkHub from './assets/linkHub.webp'
+import BeautyWebsite from './assets/aesthetics.webp'
+import TravelWebsite from './assets/travels.webp'
 
 // Simple ModernAnimation component as a placeholder
 function ModernAnimation() {
@@ -365,9 +366,23 @@ function App() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
+              image={ClimatecSync}
+              title="Climatec Sync"
+              description="Dashboard frontend para monitoramento climático, com visualização de dados meteorológicos em tempo real e históricos por meio de gráficos interativos. A aplicação consome APIs de uma arquitetura full stack distribuída."
+              tags={[
+                'React',
+                'TypeScript',
+                'Tailwind CSS',
+                'Recharts',
+                'Consumo de API'
+              ]}
+              githubLink="https://github.com/Mlluiz39/climate-sync-dashboard"
+              demoLink="https://climatec.mlluizdevtech.com.br/dashboard"
+            />
+            <ProjectCard
               image={CnpjConsultation}
-              title="Consultor de CNPJ"
-              description="Uma solução completa para consultar informações de CNPJ, como razão social, endereço, telefone e situação cadastral, sociedade tudo sem sair de casa e sem custo."
+              title="Climatec Sync"
+              description="Uma solução completa para consultar informações de tempo"
               tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
               githubLink="https://github.com/Mlluiz39/Teste-Vaga-Desenvolvedor-Front-End"
               demoLink="https://cnpj-website-test.netlify.app/"
