@@ -23,7 +23,7 @@ Este portfólio reúne projetos reais desenvolvidos para estudo, testes técnico
 ### 🌍 Climate Dashboard
 Dashboard moderno para visualização de dados climáticos em tempo real, com gráficos interativos e integração com uma arquitetura full stack.
 
-- Demo: https://climate-dashboard-demo.vercel.app/
+- Demo: https://climatec.mlluizdevtech.com.br/
 - Repositório: https://github.com/Mlluiz39/climate-dashboard-frontend
 
 ---
