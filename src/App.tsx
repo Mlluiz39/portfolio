@@ -377,7 +377,7 @@ function App() {
                 'Consumo de API'
               ]}
               githubLink="https://github.com/Mlluiz39/climate-sync-dashboard"
-              demoLink="https://climatec.mlluizdevtech.com.br/dashboard"
+              demoLink="https://climatec.mlluizdevtech.com.br"
             />
             <ProjectCard
               image={CnpjConsultation}
