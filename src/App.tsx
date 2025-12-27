@@ -370,7 +370,9 @@ function App() {
               title="Climatec Sync"
               description="Dashboard frontend para monitoramento climático, com visualização de dados meteorológicos em tempo real e históricos por meio de gráficos interativos. A aplicação consome APIs de uma arquitetura full stack distribuída.
 Como acessar o projeto ?
+
 no email: admin@example.com
+
 na senha: 123456"
               tags={[
                 'React',
