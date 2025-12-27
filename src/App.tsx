@@ -386,8 +386,8 @@ na senha: 123456"
             />
             <ProjectCard
               image={CnpjConsultation}
-              title="Climatec Sync"
-              description="Uma solução completa para consultar informações de tempo "
+              title="Consultas de Cnpj"
+              description="Uma solução completa para consultar informações de empresas via CNPJ, projeto consiste em um teste técnico para uma vaga de estágio em desenvolvimento Front-End"
               tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
               githubLink="https://github.com/Mlluiz39/Teste-Vaga-Desenvolvedor-Front-End"
               demoLink="https://cnpj-website-test.netlify.app/"
