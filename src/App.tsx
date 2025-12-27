@@ -368,7 +368,10 @@ function App() {
             <ProjectCard
               image={ClimatecSync}
               title="Climatec Sync"
-              description="Dashboard frontend para monitoramento climático, com visualização de dados meteorológicos em tempo real e históricos por meio de gráficos interativos. A aplicação consome APIs de uma arquitetura full stack distribuída."
+              description="Dashboard frontend para monitoramento climático, com visualização de dados meteorológicos em tempo real e históricos por meio de gráficos interativos. A aplicação consome APIs de uma arquitetura full stack distribuída.
+Como acessar o projeto ?
+no email: admin@example.com
+na senha: 123456"
               tags={[
                 'React',
                 'TypeScript',
@@ -382,7 +385,7 @@ function App() {
             <ProjectCard
               image={CnpjConsultation}
               title="Climatec Sync"
-              description="Uma solução completa para consultar informações de tempo"
+              description="Uma solução completa para consultar informações de tempo "
               tags={['HTML5', 'JavaScript', 'bootstrap', 'API']}
               githubLink="https://github.com/Mlluiz39/Teste-Vaga-Desenvolvedor-Front-End"
               demoLink="https://cnpj-website-test.netlify.app/"
