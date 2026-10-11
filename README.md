@@ -39,11 +39,12 @@ Conforme a página é rolada, o desenvolvedor imerso no vórtice de dados transf
 
 ## ✨ Destaques de Engenharia
 
-- 🎬 **Canvas Scroll Animation (300 Frames)**: Renderização sob demanda com pré-carregamento assíncrono em memória, interpolação linear (`lerp`) e suporte a High-DPI (`devicePixelRatio`). Zero flickering com fallback inteligente para o frame mais próximo.
-- 🌊 **Inércia e Rolagem Suave (Lenis)**: Integração com o motor Lenis para amortecimento natural do scroll em mouse wheel, trackpads e dispositivos móveis.
-- 👁️ **Scroll Reveal Progressivo**: Cada seção possui observação de interseção (`FadeInSection`) com curvas `cubic-bezier(0.16, 1, 0.3, 1)` para uma entrada fluida e sem saltos visuais.
+- 🎬 **Canvas Scroll Animation (300 Frames)**: Renderização sob demanda com **carregamento em janela deslizante** (apenas ~50 frames na memória por vez), interpolação linear (`lerp`) e suporte a High-DPI (`devicePixelRatio`). Zero flickering com fallback inteligente para o frame mais próximo.
+- 🌊 **Inércia e Rolagem Suave (Lenis)**: Integração com o motor Lenis para amortecimento natural do scroll em mouse wheel, trackpads e dispositivos móveis. Automaticamente desativado quando `prefers-reduced-motion` está ativo.
+- 👁️ **Scroll Reveal Progressivo**: Cada seção possui observação de interseção (`FadeInSection`) com curvas `cubic-bezier(0.16, 1, 0.3, 1)` para uma entrada fluida e sem saltos visuais. Respeita `prefers-reduced-motion`.
 - 💎 **Glassmorphism Escuro**: Cartões com desfoque de fundo (`backdrop-blur-md`) e bordas sutis com acentos em âmbar (`#ff9900`), garantindo legibilidade perfeita com a animação ao fundo.
 - ⚡ **Desempenho Extremo**: Build de produção gerado em menos de 2 segundos via Vite, sem bibliotecas pesadas de 3D desnecessárias.
+- ♿ **Acessibilidade**: Scrollbar visível e estilizada, `aria-hidden` no canvas decorativo, e respeito total a `prefers-reduced-motion`.
 
 ---
 
@@ -54,8 +55,10 @@ portfolio/
 ├── public/
 │   └── frames/                 # Sequência de 300 frames fotorealistas (JPG)
 ├── src/
+│   ├── hooks/
+│   │   └── useSmoothScroll.ts # Hook de scroll suave (Lenis) + helper prefers-reduced-motion
 │   ├── components/
-│   │   ├── ScrollCanvas.tsx    # Motor de renderização e sincronização do scroll
+│   │   ├── ScrollCanvas.tsx    # Motor de renderização com carregamento em janela deslizante
 │   │   ├── FadeInSection.tsx   # Wrapper com IntersectionObserver para revelação suave
 │   │   ├── NavbarMlluiz.tsx    # Header flutuante responsivo com navegação rápida
 │   │   ├── HeroCinematic.tsx   # Hero com proposta de valor, kickers e CTAs principais
@@ -70,11 +73,11 @@ portfolio/
 │   │   ├── FooterMlluiz.tsx    # Rodapé institucional com links de contato e status
 │   │   └── ProjectModal.tsx    # Modal interativo para levantamento de requisitos de projeto
 │   ├── App.tsx                 # Composição da página principal e estados globais
-│   ├── main.tsx                # Entrada React 19
+│   ├── main.tsx                # Entrada React 19 com StrictMode
 │   └── index.css               # Design tokens e Tailwind CSS v4
-├── index.html                  # HTML5 otimizado com fontes Syne, Plus Jakarta Sans & JetBrains Mono
+├── index.html                  # HTML5 otimizado com SEO, Open Graph e fontes Syne, Plus Jakarta Sans & JetBrains Mono
 ├── vite.config.ts              # Configuração Vite com plugins oficiais React e Tailwind v4
-├── tsconfig.json               # Configurações estritas do TypeScript
+├── tsconfig.json               # Configurações estritas do TypeScript (strict: true)
 └── package.json                # Dependências e scripts do projeto
 ```
 
@@ -142,7 +145,7 @@ Disponível para novos projetos de desenvolvimento de software, consultoria de a
 
 - 🌐 **Software House**: [mlluizdevtech](https://github.com/Mlluiz39)
 - 📧 **E-mail**: [mlluizpereira39@gmail.com](mailto:mlluizpereira39@gmail.com)
-- 💬 **WhatsApp**: [+55 (11) 99999-9999](https://wa.me/5511999999999)
+- 💬 **WhatsApp**: [Entrar em contato](https://wa.me/message/XXXXX) <!-- TODO: substituir pelo link real -->
 - 💼 **GitHub**: [@Mlluiz39](https://github.com/Mlluiz39)
 
 ---

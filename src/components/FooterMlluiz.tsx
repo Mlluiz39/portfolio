@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail, MessageCircle, MapPin, Sparkles, Terminal } from 'lucide-react';
+import { ArrowUp, Mail, MessageCircle, MapPin, Sparkles } from 'lucide-react';
 
 interface FooterMlluizProps {
   onOpenInquiry: () => void;

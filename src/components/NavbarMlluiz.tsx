@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, MessageSquare, Terminal } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarMlluizProps {
   onOpenInquiry: () => void;

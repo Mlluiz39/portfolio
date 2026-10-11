@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Clock, Cpu, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Layers, Clock, Cpu, MessageSquare } from 'lucide-react';
 
 export const TrustMetrics: React.FC = () => {
   const metrics = [

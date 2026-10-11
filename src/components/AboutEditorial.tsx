@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Target, Zap, HeartHandshake, Sparkles, Terminal, ArrowRight } from 'lucide-react';
+import { Shield, Target, Zap, HeartHandshake, Sparkles, ArrowRight } from 'lucide-react';
 
 interface AboutEditorialProps {
   onOpenInquiry: () => void;

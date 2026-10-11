@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  ArrowUpRight, 
-  Sparkles, 
-  ExternalLink, 
-  ShieldCheck, 
-  CheckCircle2, 
-  TrendingUp, 
-  Layers, 
-  Terminal,
-  Activity,
-  Zap
-} from 'lucide-react';
+import { ArrowUpRight, Sparkles, Activity } from 'lucide-react';
 
 interface PortfolioCaseStudiesProps {
   onOpenInquiry: () => void;

@@ -3,10 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>mlluizdevtech • Brazilian Software House</title>
+    <meta
+      name="description"
+      content="Software que transforma ideias em negócios digitais. Aplicações de alto desempenho, IA integrada e experiência visual cinematográfica. Software house de Marcelo Luiz."
+    />
+    <meta name="author" content="Marcelo Luiz (mlluizdevtech)" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- AI discovery: llms.txt (https://llmstxt.org) -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full context" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mlluizdevtech • Brazilian Software House" />
+    <meta
+      property="og:description"
+      content="Software que transforma ideias em negócios digitais. Aplicações de alto desempenho, IA integrada e experiência visual cinematográfica."
+    />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="mlluizdevtech • Brazilian Software House" />
+    <meta
+      name="twitter:description"
+      content="Software que transforma ideias em negócios digitais. Aplicações de alto desempenho, IA integrada e experiência visual cinematográfica."
+    />
+
+    <!-- Favicon (inline SVG: amber lightning bolt, matches the brand accent) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000000'/%3E%3Cpath d='M18 4 L9 18 h6 l-1 10 9-14 h-6 z' fill='%23f59e0b'/%3E%3C/svg%3E"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD — Dados estruturados para buscadores e IAs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "mlluizdevtech",
+          "url": "https://seudominio.com.br",
+          "description": "Software que transforma ideias em negócios digitais. Aplicações de alto desempenho, IA integrada e experiência visual cinematográfica.",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "#organization",
+          "name": "mlluizdevtech",
+          "alternateName": "mlluiz dev tech",
+          "url": "https://seudominio.com.br",
+          "description": "Software house brasileira especializada em desenvolvimento full stack, integração de inteligência artificial e experiências web de alto desempenho.",
+          "foundingDate": "2026",
+          "founder": { "@id": "#person" },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Brazil"
+          },
+          "knowsAbout": [
+            "React", "Next.js", "TypeScript", "Node.js", "Python",
+            "Inteligência Artificial", "Machine Learning", "LLM",
+            "Desenvolvimento Full Stack", "APIs REST", "GraphQL",
+            "React Native", "Flutter", "PostgreSQL", "MongoDB",
+            "AWS", "Docker", "Kubernetes", "CI/CD",
+            "Tailwind CSS", "Vite", "Arquitetura de Software"
+          ],
+          "knowsLanguage": ["pt-BR", "en"],
+          "sameAs": [
+            "https://github.com/Mlluiz39"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "#person",
+          "name": "Marcelo Luiz",
+          "jobTitle": "Fundador & Engenheiro de Software",
+          "worksFor": { "@id": "#organization" },
+          "url": "https://github.com/Mlluiz39",
+          "email": "mlluizpereira39@gmail.com",
+          "sameAs": [
+            "https://github.com/Mlluiz39"
+          ],
+          "knowsAbout": [
+            "Desenvolvimento Web Full Stack",
+            "Integração de Inteligência Artificial",
+            "Arquitetura de Microsserviços",
+            "React", "TypeScript", "Node.js", "Python"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "mlluizdevtech — Serviços de Desenvolvimento",
+          "provider": { "@id": "#organization" },
+          "serviceType": "Desenvolvimento de Software",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Brazil"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Desenvolvimento Full Stack",
+                  "description": "Aplicações web e mobile completas com React, Next.js, Node.js e TypeScript."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Integração de Inteligência Artificial",
+                  "description": "Chatbots, automação com LLMs, sistemas RAG, NLP e visão computacional integrados a produtos existentes."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "APIs e Microsserviços",
+                  "description": "Arquiteturas escaláveis com REST, GraphQL, WebSockets e mensageria."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Aplicações Mobile",
+                  "description": "Apps cross-platform com React Native e Flutter para iOS e Android."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Consultoria de Arquitetura",
+                  "description": "Revisão técnica, modernização de legados, migração para cloud e otimização de performance."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#000000] text-white overflow-x-hidden">
     <div id="root"></div>

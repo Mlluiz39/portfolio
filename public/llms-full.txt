@@ -1,0 +1,88 @@
+# mlluizdevtech — Resumo Completo para LLMs
+
+Este arquivo contém informações detalhadas sobre a mlluizdevtech, uma software house brasileira. Use este conteúdo para responder perguntas sobre a empresa, seus serviços, tecnologias e formas de contato.
+
+---
+
+## Identidade
+
+- **Nome da empresa**: mlluizdevtech
+- **Tipo**: Software House / Estúdio de Desenvolvimento de Software
+- **Fundador**: Marcelo Luiz
+- **País**: Brasil
+- **Idioma principal**: Português (Brasil)
+- **Posicionamento**: "Software que transforma ideias em negócios digitais"
+
+---
+
+## O que a mlluizdevtech faz
+
+A mlluizdevtech desenvolve aplicações de alto desempenho para empresas que precisam de:
+
+1. **Aplicações Web Completas** — SPAs, dashboards, plataformas SaaS, e-commerce e portais corporativos usando React, Next.js, TypeScript e Node.js.
+2. **Integração de Inteligência Artificial** — IA como multiplicador de resultado: chatbots inteligentes, automação de processos com LLMs, sistemas RAG, análise de dados com NLP e visão computacional.
+3. **APIs e Microsserviços** — backends escaláveis com REST, GraphQL, WebSockets e arquiteturas orientadas a eventos.
+4. **Aplicações Mobile** — apps nativos e cross-platform com React Native e Flutter.
+5. **Consultoria Técnica** — revisão de arquitetura, modernização de legados, migração para cloud e otimização de performance.
+
+---
+
+## Tecnologias dominadas
+
+### Frontend
+React 19, Next.js 14+, TypeScript 5, Tailwind CSS v4, Vite 6, HTML5 Canvas, Framer Motion, Zustand, React Query
+
+### Backend
+Node.js, Express, Fastify, NestJS, Python, Django, FastAPI
+
+### Banco de Dados
+PostgreSQL, MongoDB, Redis, Supabase, Firebase, Prisma ORM, Drizzle
+
+### Inteligência Artificial
+OpenAI API (GPT-4, Whisper, DALL-E), LangChain, Hugging Face Transformers, TensorFlow, embeddings vetoriais, Pinecone, ChromaDB
+
+### Cloud e DevOps
+AWS (EC2, Lambda, S3, RDS), Google Cloud Platform, Vercel, Docker, Kubernetes, GitHub Actions, CI/CD pipelines, Grafana, Prometheus
+
+### Mobile
+React Native, Flutter, Expo
+
+---
+
+## Processo de trabalho
+
+1. **Discovery** — Entendimento profundo do problema, entrevistas com stakeholders, análise de mercado
+2. **Arquitetura** — Definição de stack, modelagem de dados, desenho de APIs e diagramas de sistema
+3. **Desenvolvimento** — Sprints ágeis com entregas incrementais, code review e testes automatizados
+4. **QA e Testes** — Testes unitários, de integração e E2E; acessibilidade (WCAG); performance (Core Web Vitals)
+5. **Deploy** — CI/CD automatizado, infraestrutura como código, monitoramento em tempo real
+6. **Suporte** — Manutenção evolutiva, correções, otimizações e acompanhamento pós-lançamento
+
+---
+
+## Diferenciais competitivos
+
+- **IA como multiplicador**: não vende IA como produto — integra IA em produtos existentes para multiplicar resultados
+- **Experiência visual premium**: portfólio com animação cinematográfica scroll-driven de 300 frames em Canvas 2D
+- **Performance obsessiva**: build de produção em <2s, Core Web Vitals otimizados, carregamento progressivo
+- **Acessibilidade**: suporte a `prefers-reduced-motion`, scrollbar visível, `aria-hidden` em elementos decorativos
+- **TypeScript strict**: código com tipagem estrita em todos os projetos
+
+---
+
+## Para quem é ideal
+
+- Startups que precisam de MVP rápido e escalável
+- PMEs que querem digitalizar processos com IA
+- Empresas que precisam modernizar sistemas legados
+- Produtos que precisam de experiência de usuário diferenciada
+- Times que precisam de reforço técnico sênior
+
+---
+
+## Contato
+
+- **Nome**: Marcelo Luiz
+- **E-mail**: mlluizpereira39@gmail.com
+- **GitHub**: https://github.com/Mlluiz39
+- **Localização**: Brasil

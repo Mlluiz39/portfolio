@@ -1,14 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import Lenis from 'lenis';
+import { useEffect, useRef } from 'react';
+import { prefersReducedMotion } from '../hooks/useSmoothScroll';
 
 const FRAME_COUNT = 300;
+
+// How many frames on each side of the current one to keep prefetched.
+// Total in flight is roughly WINDOW * 2 + lookahead. This is what keeps the
+// page from downloading all 300 frames (11 MB) up front.
+const WINDOW = 20;
+// A slight bias towards the scroll direction feels more responsive.
+const LOOKAHEAD = 10;
 
 function getFrameUrl(index: number): string {
   const padded = String(index + 1).padStart(3, '0');
   return `/frames/ezgif-frame-${padded}.jpg`;
 }
 
-export const ScrollCanvas: React.FC = () => {
+export const ScrollCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -17,13 +24,18 @@ export const ScrollCanvas: React.FC = () => {
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
+    const reducedMotion = prefersReducedMotion();
+
     const images: HTMLImageElement[] = new Array(FRAME_COUNT);
     const loaded: boolean[] = new Array(FRAME_COUNT).fill(false);
 
     let currentProgress = 0;
     let targetProgress = 0;
+    let currentIndex = 0;
     let lastDrawnIndex = -1;
-    let animId: number;
+    let lastDirection = 1;
+    let animId = 0;
+    let retryTimer = 0;
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -34,12 +46,12 @@ export const ScrollCanvas: React.FC = () => {
     };
 
     const drawFrame = (img: HTMLImageElement) => {
-      if (!img || !img.complete) return;
+      if (!img || !img.complete || img.naturalWidth === 0) return;
 
       const cw = canvas.width;
       const ch = canvas.height;
-      const iw = img.naturalWidth || 1280;
-      const ih = img.naturalHeight || 720;
+      const iw = img.naturalWidth;
+      const ih = img.naturalHeight;
 
       const imgRatio = iw / ih;
       const canvasRatio = cw / ch;
@@ -85,6 +97,55 @@ export const ScrollCanvas: React.FC = () => {
       return images[0] || null;
     };
 
+    const loadFrame = (index: number, onLoaded?: () => void) => {
+      if (index < 0 || index >= FRAME_COUNT) return;
+      if (images[index]) return; // already requested
+
+      const img = new Image();
+      images[index] = img;
+      img.onload = () => {
+        loaded[index] = true;
+        // If this frame is the one we're waiting on, repaint immediately.
+        if (index === currentIndex) {
+          lastDrawnIndex = -1;
+          draw(currentProgress);
+        }
+        onLoaded?.();
+      };
+      img.onerror = () => {
+        // Release the slot so it can be retried on a later tick.
+        images[index] = undefined as unknown as HTMLImageElement;
+      };
+      img.src = getFrameUrl(index);
+    };
+
+    // Keep only a sliding window of frames around the current index in flight.
+    const updateWindow = (index: number, direction: number) => {
+      const back = WINDOW;
+      const ahead = WINDOW + (direction >= 0 ? LOOKAHEAD : 0);
+      const from = Math.max(0, index - back);
+      const to = Math.min(FRAME_COUNT - 1, index + ahead);
+
+      // Kick off loads in the direction of travel, starting nearest first.
+      if (direction >= 0) {
+        for (let i = index; i <= to; i++) loadFrame(i);
+        for (let i = index - 1; i >= from; i--) loadFrame(i);
+      } else {
+        for (let i = index; i >= from; i--) loadFrame(i);
+        for (let i = index + 1; i <= to; i++) loadFrame(i);
+      }
+    };
+
+    // Retry any frame that is in the window but failed / is not yet loaded.
+    // This keeps the current window self-healing without reloading old frames.
+    const ensureWindowLoaded = () => {
+      const from = Math.max(0, currentIndex - WINDOW);
+      const to = Math.min(FRAME_COUNT - 1, currentIndex + WINDOW + LOOKAHEAD);
+      for (let i = from; i <= to; i++) {
+        if (!loaded[i] && !images[i]) loadFrame(i);
+      }
+    };
+
     const draw = (progress: number) => {
       const frameIndex = Math.min(
         FRAME_COUNT - 1,
@@ -94,86 +155,68 @@ export const ScrollCanvas: React.FC = () => {
       if (frameIndex === lastDrawnIndex) return;
 
       const imgToDraw = getNearestLoadedImage(frameIndex);
-      if (imgToDraw && imgToDraw.complete) {
+      if (imgToDraw && imgToDraw.complete && imgToDraw.naturalWidth > 0) {
         drawFrame(imgToDraw);
         lastDrawnIndex = frameIndex;
       }
     };
 
-    // Preload all frames
-    const firstImg = new Image();
-    firstImg.src = getFrameUrl(0);
-    images[0] = firstImg;
-    firstImg.onload = () => {
-      loaded[0] = true;
-      resize();
-    };
-
-    for (let i = 1; i < FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = getFrameUrl(i);
-      images[i] = img;
-      img.onload = () => {
-        loaded[i] = true;
-        if (Math.round(currentProgress * (FRAME_COUNT - 1)) === i) {
-          lastDrawnIndex = -1;
-          draw(currentProgress);
-        }
-      };
-    }
-
     const updateScroll = () => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (maxScroll <= 0) {
-        targetProgress = 0;
-      } else {
-        targetProgress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
-      }
+      targetProgress = maxScroll <= 0 ? 0 : Math.min(1, Math.max(0, window.scrollY / maxScroll));
     };
 
     const animate = () => {
       const delta = targetProgress - currentProgress;
+      // Snap to the target immediately for users who opt out of motion.
+      const ease = reducedMotion ? 1 : 0.085;
       if (Math.abs(delta) > 0.0001) {
-        currentProgress += delta * 0.085;
-        draw(currentProgress);
+        currentProgress += delta * ease;
       } else if (currentProgress !== targetProgress) {
         currentProgress = targetProgress;
-        draw(currentProgress);
+      } else {
+        animId = requestAnimationFrame(animate);
+        return;
       }
+
+      const nextIndex = Math.min(
+        FRAME_COUNT - 1,
+        Math.max(0, Math.round(currentProgress * (FRAME_COUNT - 1)))
+      );
+      const direction = nextIndex >= currentIndex ? 1 : -1;
+      if (direction !== lastDirection || nextIndex !== currentIndex) {
+        lastDirection = direction;
+        currentIndex = nextIndex;
+        updateWindow(currentIndex, direction);
+      }
+
+      draw(currentProgress);
       animId = requestAnimationFrame(animate);
     };
 
-    // Setup Lenis for smooth momentum scrolling
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+    // Load the opening frames right away so the hero is never blank.
+    loadFrame(0, () => {
+      lastDrawnIndex = -1;
+      resize();
+      updateWindow(0, 1);
     });
-
-    lenis.on('scroll', () => {
-      updateScroll();
-    });
-
-    let lenisRafId: number;
-    const lenisRaf = (time: number) => {
-      lenis.raf(time);
-      lenisRafId = requestAnimationFrame(lenisRaf);
-    };
-    lenisRafId = requestAnimationFrame(lenisRaf);
 
     window.addEventListener('resize', resize);
     window.addEventListener('scroll', updateScroll, { passive: true });
 
+    // Periodically heal the window in case some frames failed to load.
+    retryTimer = window.setInterval(ensureWindowLoaded, 1500);
+
     resize();
     updateScroll();
+    updateWindow(0, 1);
     animId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('scroll', updateScroll);
       cancelAnimationFrame(animId);
-      cancelAnimationFrame(lenisRafId);
-      lenis.destroy();
+      window.clearInterval(retryTimer);
     };
   }, []);
 
@@ -181,6 +224,7 @@ export const ScrollCanvas: React.FC = () => {
     <canvas
       ref={canvasRef}
       id="scroll-canvas"
+      aria-hidden="true"
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
       style={{ display: 'block' }}
     />

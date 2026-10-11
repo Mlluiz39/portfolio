@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ScrollCanvas } from './components/ScrollCanvas';
 import { FadeInSection } from './components/FadeInSection';
 import { NavbarMlluiz } from './components/NavbarMlluiz';
@@ -13,8 +13,11 @@ import { AboutEditorial } from './components/AboutEditorial';
 import { FinalVortexCTA } from './components/FinalVortexCTA';
 import { FooterMlluiz } from './components/FooterMlluiz';
 import { ProjectModal } from './components/ProjectModal';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 export default function App() {
+  useSmoothScroll();
+
   const [inquiryOpen, setInquiryOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 

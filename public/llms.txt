@@ -1,0 +1,44 @@
+# mlluizdevtech
+
+> Brazilian Software House — Software que transforma ideias em negócios digitais.
+
+## Sobre
+
+mlluizdevtech é uma software house brasileira liderada por Marcelo Luiz, especializada em desenvolvimento de aplicações de alto desempenho, integração de inteligência artificial e experiências web cinematográficas. Atendemos startups, PMEs e empresas que querem transformar ideias em produtos digitais escaláveis.
+
+## Serviços
+
+- **Desenvolvimento Full Stack**: Aplicações web e mobile completas com React, Next.js, Node.js, TypeScript e bancos de dados modernos (PostgreSQL, MongoDB, Redis).
+- **Integração de Inteligência Artificial**: Automação inteligente, chatbots, RAG (Retrieval-Augmented Generation), processamento de linguagem natural e visão computacional integrados a produtos existentes.
+- **APIs e Microsserviços**: Arquiteturas escaláveis com REST, GraphQL, WebSockets e mensageria (RabbitMQ, Kafka).
+- **Aplicações Mobile**: React Native e Flutter para iOS e Android com experiência nativa.
+- **Consultoria de Arquitetura**: Revisão técnica, modernização de sistemas legados, migração para cloud e otimização de performance.
+
+## Stack Tecnológica
+
+- Frontend: React 19, Next.js, TypeScript, Tailwind CSS v4, Vite
+- Backend: Node.js, Express, Fastify, NestJS, Python, Django
+- Mobile: React Native, Flutter
+- Banco de Dados: PostgreSQL, MongoDB, Redis, Supabase, Firebase
+- IA/ML: OpenAI, LangChain, Hugging Face, TensorFlow
+- Cloud: AWS, GCP, Vercel, Docker, Kubernetes
+- DevOps: GitHub Actions, CI/CD, monitoramento com Grafana
+
+## Diferenciais
+
+- Experiência visual cinematográfica com animações scroll-driven e Canvas 2D
+- Integração de IA como multiplicador de resultado, não como produto isolado
+- Acessibilidade (WCAG) e performance (Core Web Vitals) como prioridades
+- Processo estruturado: Discovery → Arquitetura → Desenvolvimento → Testes → Deploy → Suporte
+
+## Contato
+
+- Nome: Marcelo Luiz
+- E-mail: mlluizpereira39@gmail.com
+- GitHub: https://github.com/Mlluiz39
+- Localização: Brasil
+
+## Links
+
+- Portfólio: este site
+- GitHub: https://github.com/Mlluiz39
