@@ -34,4 +34,5 @@ Allow: /
 # llms.txt: /llms.txt
 # llms-full.txt: /llms-full.txt
 
-Sitemap: /sitemap.xml
+# TODO: trocar dominio se diferir de mlluizdevtech.com.br
+Sitemap: https://mlluizdevtech.com.br/sitemap.xml
